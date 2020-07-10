@@ -1,6 +1,5 @@
 import tkinter as tk
 from time import sleep
-from playsound import playsound as pl
 
 
 #### DRAW WINDOW
