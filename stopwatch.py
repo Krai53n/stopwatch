@@ -2,12 +2,6 @@ import tkinter as tk
 from time import sleep
 
 
-#### DRAW WINDOW
-root = tk.Tk()
-root.resizable(0, 0)
-root.title('Stopwatch')
-
-
 ### SETTINGS
 FONT = 'SourceCodePro-Bold'
 SIZE = 50
@@ -16,6 +10,14 @@ BACKGROUND = '#28313D'
 FOREGORUND = '#f5b849'
 FOREGROUND_ACTIVE = 'white'
 FOREGROUND_RESET = '#DC6952'
+
+
+#### DRAW WINDOW
+root = tk.Tk()
+root.resizable(0, 0)
+root.title('Stopwatch')
+root.config(bg = BACKGROUND)
+
 
 
 ### GLOBAL VARIABLES
@@ -38,6 +40,7 @@ def cmd_start_stop():
         bttn_start_stop['text'] = 'CONTINUE'
         bttn_start_stop['fg'] = FOREGORUND
 
+
 def cmd_reset():
     global counter_reset
     counter_reset = 1
@@ -48,6 +51,7 @@ def cmd_reset():
 
     bttn_start_stop['text'] = 'START'
     bttn_start_stop['fg'] = FOREGORUND
+
 
 def __start():
     global counter_reset
@@ -110,25 +114,30 @@ def __time_go(value):
 ### WIDGETS
 lbl_hours = tk.Label(text = '00',
                       font = (FONT, SIZE),
-                      fg = FOREGORUND)
+                      fg = FOREGORUND,
+                      bg = BACKGROUND)
 lbl_hours.grid()
 
 tk.Label(text = ':',
          font = (FONT, SIZE),
-         fg = FOREGORUND).grid(row = 0, column = 1)
+         fg = FOREGORUND,
+         bg = BACKGROUND).grid(row = 0, column = 1)
 
 lbl_minutes = tk.Label(text = '00',
                         font = (FONT, SIZE),
-                        fg = FOREGORUND)
+                        fg = FOREGORUND,
+                        bg = BACKGROUND)
 lbl_minutes.grid(row = 0, column = 2)
 
 tk.Label(text = ':',
          font = (FONT, SIZE),
-         fg = FOREGORUND).grid(row = 0, column = 3)
+         fg = FOREGORUND,
+         bg = BACKGROUND).grid(row = 0, column = 3)
 
 lbl_seconds = tk.Label(text = '00',
                         font = (FONT, SIZE),
-                        fg = FOREGORUND)
+                        fg = FOREGORUND,
+                        bg = BACKGROUND)
 lbl_seconds.grid(row = 0, column = 4)
 
 bttn_start_stop = tk.Button(text = 'START',
@@ -136,7 +145,8 @@ bttn_start_stop = tk.Button(text = 'START',
                             fg = FOREGORUND,
                             activeforeground = FOREGROUND_ACTIVE,
                             bd = 0,
-                            command = cmd_start_stop)
+                            command = cmd_start_stop,
+                            bg = BACKGROUND)
 bttn_start_stop.grid(row = 1, column = 2, columnspan = 3)
 
 bttn_reset = tk.Button(text = 'RESET',
@@ -144,7 +154,8 @@ bttn_reset = tk.Button(text = 'RESET',
                        fg = FOREGROUND_RESET,
                        activeforeground = FOREGROUND_ACTIVE,
                        bd = 0,
-                       command = cmd_reset)
+                       command = cmd_reset,
+                       bg = BACKGROUND)
 bttn_reset.grid(row = 1, columnspan = 2)
 
 
