@@ -68,7 +68,7 @@ def __start():
             lbl_seconds['text'] = seconds
             seconds = int(seconds)
             root.update()
-            sleep(0.1)
+            sleep(1)
             continue
         
         seconds = 0
